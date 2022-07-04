@@ -12,6 +12,7 @@ public class EasternRestaurant implements Restaurant {
 
 
     public EasternRestaurant(Chef chef, Course course) {
+        // 여기서도 이러면 향후 Chef, Course 인터페이스를 상속받아 구현된 객체만 잘 들어온다면 수정이 필요없어짐.
         this.chef = chef;
         this.course = course;
     }
