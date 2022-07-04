@@ -1,4 +1,4 @@
-package com.spring.core.chap01_1;
+package com.spring.core.chap01_2;
 
 public class WesternRestaurant implements Restaurant {
 
@@ -6,9 +6,9 @@ public class WesternRestaurant implements Restaurant {
     private Course course;
 
 
-    public WesternRestaurant() {
-        this.chef = new JuanChef();
-        this.course = new FrenchCourse();
+    public WesternRestaurant(Chef chef, Course course) {
+        this.chef = chef;
+        this.course = course;
     }
 
 

@@ -1,4 +1,4 @@
-package com.spring.core.chap01_1;
+package com.spring.core.chap01_2;
 
 public class EasternRestaurant implements Restaurant {
 
@@ -11,10 +11,9 @@ public class EasternRestaurant implements Restaurant {
         // 코드의 내용 변경이 잦아질 것이라고 가정하는 것이다.
 
 
-    public EasternRestaurant() {
-        this.chef = new KimuraChef(); // 추가적 클래스를 만들어서 새로운 셰프들을 넣는 것은 가능
-                                        // 변경에 닫혀있는건 아니라서 OCP 위반이다!!
-        this.course = new SushiCourse();
+    public EasternRestaurant(Chef chef, Course course) {
+        this.chef = chef;
+        this.course = course;
     }
 
 

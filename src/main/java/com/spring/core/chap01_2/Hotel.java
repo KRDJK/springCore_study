@@ -1,4 +1,4 @@
-package com.spring.core.chap01_1;
+package com.spring.core.chap01_2;
 
 public class Hotel {
 
@@ -10,14 +10,13 @@ public class Hotel {
 
 
     // 인터페이스에 의존하도록 설계 변경.
-    private Restaurant restaurant;
+    private Restaurant restaurant; // 레스토랑 인터페이스를 구현받기만 한다면!! 그 어떤 새로운 레스토랑이라도 들어올 수 있다.
     private Chef headChef;
 
 
-    public Hotel() {
-        this.restaurant = new EasternRestaurant(); // 구현체에 의존하고 있는 것과 같다. DIP도 위반!!
-            // 이건 SRP도 위반하고 있는 것이다. 호텔이라는 감독이 역할에 얘네 캐스팅까지..?? 캐스팅 담당 직원이 따로 구하게 하면 되는건데..??
-        this.headChef = new KimuraChef();
+    public Hotel(Restaurant restaurant, Chef headChef) { // 외부에 맡기는 것. 알아서 잘 구해주겠지~~
+        this.restaurant = restaurant;
+        this.headChef = headChef;
     }
 
 
@@ -28,6 +27,9 @@ public class Hotel {
     public void inform() {
         System.out.printf("우리 호텔의 레스토랑은 %s이며, 헤드쉐프는 %s입니다.\n"
                 , restaurant.getClass().getSimpleName(), headChef.getClass().getSimpleName());
+                // 레스토랑 타입은 인터페이스 타입이라 무슨 객체인지 알고 싶을 때!! getClass()로 메타데이터를 받아온다.
+                        // getName을 하면 풀네임이 들어온다. 풀네임?? [com.~~~.~~~~.클래스명] 으로 진행되는 풀 패키지명을 말함.
+                        // getSimpleName을 해야 그 클래스의 이름을 가져온다.
 
         restaurant.reserve();
     }
