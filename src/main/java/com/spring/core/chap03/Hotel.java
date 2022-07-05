@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 
 // 자동 빈 등록
 @Component // 스프링 컨테이너가 관리해준다. but, 자동 등록을 하더라도 Config 클래스가 있어야 한다.
-// 빈 이름을 따로 설정해주지 않으면 클래스명을 카멜 케이스로 바꿔서 등록한다. Hotel이면 hotel
+// 빈 이름을 따로 설정해주지 않으면 클래스명을 카멜 케이스로 바꿔서 등록한다. Hotel이면 hotel  // EasternRestaurant는 easternRestaurant
 public class Hotel {
 
 
