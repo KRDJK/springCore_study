@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+<!--    골뱅이 빈 하나당 빈(bean) 태그를 만든다. -->
+
+<!--    id는 빈 이름 지정!!  class 속성에는 생성할 객체의 풀 패키지 경로 -->
+    <bean id="c" class="com.spring.core.chap02.JuanChef"></bean>
+
+    <bean id="sc" class="com.spring.core.chap02.SushiCourse"></bean>
+    <bean id="fc" class="com.spring.core.chap02.FrenchCourse"></bean>
+
+
+    <bean id="res" class="com.spring.core.chap02.WesternRestaurant">
+<!--        setter 주입 태그 name 속성에는 setter의 필드명 // ref에는 참조할 빈의 id를 입력 -->
+        <!-- property : 필드의 속성값. set을 하면 어디가 수정돼?? 속성이 수정되잖  -->
+        <property name="chef" ref="c"></property>
+        <property name="course" ref="fc"></property>
+    </bean>
+
+
+    <bean id="hotel" class="com.spring.core.chap02.Hotel">
+<!--        생성자 주입 태그-->
+    <!--        name에는 생성자 매개변수명, ref는 주입할 빈의 아이디-->
+        <constructor-arg name="restaurant" ref="res"></constructor-arg>
+        <constructor-arg name="headChef" ref="c"></constructor-arg>
+    </bean>
+</beans>

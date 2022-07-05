@@ -1,4 +1,4 @@
-package com.spring.core.chap01_2;
+package com.spring.core.chap02;
 
 public class Hotel {
 
@@ -11,7 +11,7 @@ public class Hotel {
 
     // 인터페이스에 의존하도록 설계 변경.
     private Restaurant restaurant; // 레스토랑 인터페이스를 구현받기만 한다면!! 그 어떤 새로운 레스토랑이라도 들어올 수 있다.
-    private Chef headChef;
+    private Chef headChef; // 의존 객체라고 한다.
 
 
     public Hotel(Restaurant restaurant, Chef headChef) { // 외부에 맡기는 것. 알아서 잘 구해주겠지~~ 변동가능성이 있기 때문에!!

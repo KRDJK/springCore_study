@@ -17,7 +17,7 @@ public class Hotel {
     public Hotel() {
         this.restaurant = new EasternRestaurant(); // 구현체에 의존하고 있는 것과 같다. DIP도 위반!!
             // 이건 SRP도 위반하고 있는 것이다. 호텔이라는 감독이 역할에 얘네 캐스팅까지..?? 캐스팅 담당 직원이 따로 구하게 하면 되는건데..??
-        this.headChef = new KimuraChef();
+        this.headChef = new KimuraChef(); // 이렇게 객체가 필요한 객체를 선택해서 직접 넣는 이 과정을 두고 결합도가 높다고 평가한다.
     }
 
 

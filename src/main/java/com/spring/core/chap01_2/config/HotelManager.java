@@ -17,7 +17,7 @@ public class HotelManager { // Bean Factory : 객체를 생성하는 공장이�
 
     // 코스 객체를 생성하여 리턴하는 메서드
     public Course course() {
-        return new SushiCourse();
+        return new SushiCourse(); // 이렇게 생성자를 통해 객체 생성을 해서 넣어주는 방식을 [생성자 주입 방식]이라고 한다.
     }
 
 

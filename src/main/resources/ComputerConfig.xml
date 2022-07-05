@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--    bean 정의부 -->
+    <bean id="keyboard" class="com.spring.core.chap02.computer.HpKeyboard"></bean>
+    <bean id="mouse" class="com.spring.core.chap02.computer.AppleMouse"></bean>
+    <bean id="monitor" class="com.spring.core.chap02.computer.LgMonitor"></bean>
+
+
+    <bean id="computer" class="com.spring.core.chap02.computer.Computer">
+        <constructor-arg name="keyboard" ref="keyboard"></constructor-arg>
+        <constructor-arg name="mouse" ref="mouse"></constructor-arg>
+        <constructor-arg name="monitor" ref="monitor"></constructor-arg>
+    </bean>
+
+
+
+</beans>
